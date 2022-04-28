@@ -19,15 +19,39 @@
     </div>
 
     <div class="photos">
-        <div><img class="zoom" src="./images/rock.jpg" onclick="alert('rock')"></div>
-        <div><img src="./images/paper.jpg"></div>
-        <div><img src="./images/scissors.jpg"></div>
+        <div><img class="element" src="./images/rock.jpg" id="rock"
+                onclick="computerPlay();playRock();winner();currentScore()"></div>
+        <div><img class="element" src="./images/paper.jpg" id="paper"
+                onclick="computerPlay();playPaper();winner();currentScore()">
+        </div>
+        <div><img class="element" src="./images/scissors.jpg" id="scissors"
+                onclick="computerPlay();playScissors();winner();currentScore()">
+        </div>
     </div>
 
     <div>
         <h2 style="text-align: center;">Display Results!</h2>
-        <p class="result" style="text-align: center;">multiplier(3)</p>
+        <div class="displayplayers">
+            <div>
+                <img class="player" src="./images/face.png">
+                <h3 style="text-align: center;">Player 1</h3>
+                <h4 class="result" style="text-align: center;" id="result"></h4>
+                <h4 class="#" style="text-align: center;" id="myscore">0</h4>
+            </div>
+            <div>
+                <img class="player" src="./images/thumbup.png">
+                <h3 style="text-align: center;">Computer</h3>
+                <h4 style="text-align: center;" id="computergame"></h4>
+                <h4 class="#" style="text-align: center;" id="computerscore">0</h4>
+            </div>
+        </div>
     </div>
+
+    <div class="winner" style="width: 500px; margin:0 auto;">
+        <h2 class="#" id="subwinner">Winner is Displyed Here!</h2>
+    </div>
+
+
 
 </body>
 

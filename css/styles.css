@@ -1,3 +1,7 @@
+body {
+    background-color: #f0e6e6;
+}
+
 .intro {
     width: 800px;
     margin: 0 auto;
@@ -13,13 +17,50 @@
 
 }
 
-img {
-    width: 350px;
-    height: 350px;
+.element {
+    width: 150px;
+    height: 150px;
     border-radius: 20px;
     transition: all .2s ease-in-out;
 }
 
-img:hover {
+.element:hover {
     transform: scale(1.1);
+}
+
+
+.displaytable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+
+
+.player {
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+    border: 2px solid blue;
+    padding: 10px;
+}
+
+.player:hover {
+    transform: scale(1.1);
+}
+
+.displayplayers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 20px;
+
+}
+
+.winner {
+    border: 2px solid blue;
+    border-radius: 20px;
+    text-align: center;
+    /* display: none; */
 }
