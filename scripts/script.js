@@ -38,7 +38,7 @@ function computerPlay() {
     // console.log(randomGame)
 }
 
-function winner() {
+function displayWinner() {
     const myScore = document.getElementById('result').innerHTML;
     const computerScore = document.getElementById("computergame").innerHTML;
     const displayScore = document.getElementById("subwinner");
@@ -60,7 +60,7 @@ function winner() {
 
 let myinitialScore = 1;
 let computerinitialScore = 1;
-function currentScore() {
+function getcurrentScore() {
     const myGoal = document.getElementById("myscore");
     const computerGoal = document.getElementById("computerscore");
     const displayedResult = document.getElementById("subwinner").innerHTML;

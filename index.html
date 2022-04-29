@@ -21,12 +21,12 @@
 
     <div class="photos">
         <div><img class="element" src="./images/rock.jpg" id="rock"
-                onclick="computerPlay();playRock();winner();currentScore()"></div>
+                onclick="computerPlay();playRock();displayWinner();getcurrentScore()"></div>
         <div><img class="element" src="./images/paper.jpg" id="paper"
-                onclick="computerPlay();playPaper();winner();currentScore()">
+                onclick="computerPlay();playPaper();displayWinner();getcurrentScore()">
         </div>
         <div><img class="element" src="./images/scissors.jpg" id="scissors"
-                onclick="computerPlay();playScissors();winner();currentScore()">
+                onclick="computerPlay();playScissors();displayWinner();getcurrentScore()">
         </div>
     </div>
 
@@ -56,8 +56,7 @@
         <div class="modal">
             <h1>GAME OVER!</h1>
             <h2 id="display-finalresult"></h2>
-            <button type="submit" onclick="refreshPage()">Click Ok to
-                continue!</button>
+            <button type="submit" onclick="refreshPage()">Restart Game!</button>
         </div>
     </div>
 
