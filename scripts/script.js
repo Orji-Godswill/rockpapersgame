@@ -43,37 +43,60 @@ function winner() {
     const computerScore = document.getElementById("computergame").innerHTML;
     const displayScore = document.getElementById("subwinner");
     if (myScore === "rock" && computerScore === "paper") {
-        displayScore.innerHTML = "Paper wins Rock - Computer won";
+        displayScore.innerHTML = "Paper wins Rock - Computer won 😥";
     } else if (myScore === "rock" && computerScore === "scissors") {
-        displayScore.innerHTML = "Rock wins Scissors - You won";
+        displayScore.innerHTML = "Rock wins Scissors - You won ✊ ";
     } else if (myScore === "paper" && computerScore === "scissors") {
-        displayScore.innerHTML = "Scissors wins Paper - Computer won";
+        displayScore.innerHTML = "Scissors wins Paper - Computer won 😥";
     } else if (myScore === "paper" && computerScore === "rock") {
-        displayScore.innerHTML = "Paper wins Rock - You won";
+        displayScore.innerHTML = "Paper wins Rock - You won ✊ ";
     } else if (myScore === "scissors" && computerScore === "paper") {
-        displayScore.innerHTML = "Scissors wins Paper - You won";
+        displayScore.innerHTML = "Scissors wins Paper - You won ✊";
     } else if (myScore === "scissors" && computerScore === "rock") {
-        displayScore.innerHTML = "Rock wins Scissors - Computer won";
-    } else (displayScore.innerHTML = "Tie - No winner")
+        displayScore.innerHTML = "Rock wins Scissors - Computer won 😥";
+    } else (displayScore.innerHTML = "Tie - No winner 👋")
 }
-
-
-// const refreshButton = document.querySelector('.refresh-btn');
-// const refreshPage = () => {
-//     location.reload();
-// }
-// refreshButton.addEventListener('click', refreshPage)
 
 
 let myinitialScore = 1;
 let computerinitialScore = 1;
 function currentScore() {
     const myGoal = document.getElementById("myscore");
-    computerGoal = document.getElementById("computerscore");
+    const computerGoal = document.getElementById("computerscore");
     const displayedResult = document.getElementById("subwinner").innerHTML;
     if (displayedResult.includes("You won")) {
         myGoal.innerHTML = myinitialScore++;
     } else if (displayedResult.includes("Computer won")) {
         computerGoal.innerHTML = computerinitialScore++;
-    } else (console.log("No winner"))
+    } else (console.log("No winner"));
+
+    var sumScore = parseInt(computerGoal.innerHTML) + parseInt(myGoal.innerHTML);
+    console.log(sumScore);
+
+    const popup = document.getElementById("modal_container");
+    const resultFinal = document.getElementById("display-finalresult")
+    if (sumScore === 5) {
+        if (parseInt(computerGoal.innerHTML) > parseInt(myGoal.innerHTML)) {
+            // alert("Game over! - Sorry the computer won!");
+            popup.classList.add("show");
+            resultFinal.innerHTML = "Sorry the computer won! 🥸 ";
+        } else if (parseInt(computerGoal.innerHTML) < parseInt(myGoal.innerHTML)) {
+            // alert("Game over! - Hurray! You are smarter than the Computer!");
+            popup.classList.add("show");
+            resultFinal.innerHTML = "Hurray! You are smarter than the Computer! 👋👋 ";
+        }
+    }
+}
+
+const modal_container = document.getElementById("modal_container");
+const close = document.getElementById("end-game");
+
+if (close) {
+    close.addEventListener("click", () => {
+        modal_container.classList.remove("show");
+    });
+}
+
+function refreshPage() {
+    window.location.reload();
 }
